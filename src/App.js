@@ -4,6 +4,7 @@ import "weather-icons/css/weather-icons.css"
 import 'bootstrap/dist/css/bootstrap-grid.min.css'
 import Weather from "./components/Weather";
 import Form from "./components/Form";
+import FavoritesSideBar from './components/FavoritesSideBar'
 
 const API_KEY = "429736441cf3572838aa10530929f7cd";
 
@@ -104,15 +105,22 @@ class App extends React.Component {
     render() {
         return (
             <div className="App">
-                <Form loadWeather={this.getWeather} error={this.state.error} />
-                <Weather
-                    cityname={this.state.city}
-                    weatherIcon={this.state.icon}
-                    temp_celsius={this.state.celsius}
-                    temp_max={this.state.temp_max}
-                    temp_min={this.state.temp_min}
-                    description={this.state.description}
-                />
+                <div className="row">
+                    <div className="col-sm-12 col-md-9 weather-wrapper">
+                        <Form loadWeather={this.getWeather} error={this.state.error} />
+                        <Weather
+                            cityname={this.state.city}
+                            weatherIcon={this.state.icon}
+                            temp_celsius={this.state.celsius}
+                            temp_max={this.state.temp_max}
+                            temp_min={this.state.temp_min}
+                            description={this.state.description}
+                        />
+                    </div>
+                    <div className="col-sm-12 col-md-3 favorites-wrapper">
+                        <FavoritesSideBar/>
+                    </div>
+                </div>
             </div>
         );
     }

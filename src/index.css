@@ -36,3 +36,9 @@ form input
 container::-webkit-input-placeholder{
   color: white!important;
 }
+
+/*favorites side bar*/
+
+.favorites-wrapper{
+  margin: 20px 0;
+}

@@ -22,6 +22,8 @@ const Weather = props => {
                     {props.description.charAt(0).toUpperCase() +
                     props.description.slice(1)}
                 </h4>
+                <br/>
+                {props.cityname ? (<button className="btn btn-warning" >Add to Favourites</button>):null}
             </div>
         </div>
     );
