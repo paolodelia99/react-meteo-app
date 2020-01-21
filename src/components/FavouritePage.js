@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class FavoritesSideBar extends Component {
+class FavouritePage extends Component {
     render() {
         return (
             <div>
@@ -15,4 +15,4 @@ class FavoritesSideBar extends Component {
     }
 }
 
-export default FavoritesSideBar;
+export default FavouritePage;
