@@ -24,8 +24,8 @@ export default function (state=initialState,action) {
         case REMOVE_CITY:
             return {
                 ...state,
-                favourites: state.favourites.filter(fav => fav.cityname !== payload)
-            }
+                favourites: state.favourites.filter(fav => fav.id !== payload)
+            };
         default:
             return state;
     }

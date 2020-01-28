@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import {addCity} from "../actions/favourites";
 
 const Weather = props => {
     return (
@@ -23,7 +25,7 @@ const Weather = props => {
                     props.description.slice(1)}
                 </h4>
                 <br/>
-                {props.cityname ? (<button className="btn btn-warning" >Add to Favourites</button>):null}
+                {props.cityname ? (<button className="btn btn-warning" onClick={e => addCity(props.cityname,props.country)}>Add to Favourites</button>):null}
             </div>
         </div>
     );
@@ -40,4 +42,4 @@ function minMaxTemp(min,max) {
     }
 }
 
-export default Weather;
+export default connect(null,{addCity})(Weather);
