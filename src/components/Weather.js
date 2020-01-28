@@ -31,8 +31,6 @@ const Weather = ({
          addCity(newCity);
     };
 
-    console.log(cityname)
-
     return (
         <div className="container text-light">
             <div className="Card">

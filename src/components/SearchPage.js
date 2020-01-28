@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Form from "./Form";
 import Weather from "./Weather";
+import ForecastsCarousel from "./ForecastsCarousel";
 
 const API_KEY = "b6c401972b7a8c623e78936ba160fe1d\n";
 
@@ -16,7 +17,9 @@ class SearchPage extends Component {
             temp_max: null,
             temp_min: null,
             description: "",
-            error: false
+            error: false,
+            forecastList: undefined,
+            isForecastingLoading: true
         };
 
         this.weatherIcon = {
@@ -74,7 +77,13 @@ class SearchPage extends Component {
                 `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}`
             );
 
+            const api_call_forecast = await fetch(
+                `http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${API_KEY}`
+            )
+
             const response = await api_call.json();
+
+            const forecastResponse = await api_call_forecast.json();
 
             this.setState({
                 city: `${response.name}, ${response.sys.country}`,
@@ -84,7 +93,8 @@ class SearchPage extends Component {
                 temp_max: ""+this.calCelsius(response.main.temp_max),
                 temp_min: ""+this.calCelsius(response.main.temp_min),
                 description: response.weather[0].description,
-                error: false
+                error: false,
+                forecastList: forecastResponse.list.slice(0,6)
             });
 
             // seting icons
@@ -102,16 +112,26 @@ class SearchPage extends Component {
         return (
             <div>
                 <Form loadWeather={this.getWeather} error={this.state.error} />
-                <Weather
-                    cityname={this.state.city}
-                    country={this.state.country}
-                    weatherIcon={this.state.icon}
-                    temp_celsius={this.state.celsius}
-                    temp_max={this.state.temp_max}
-                    temp_min={this.state.temp_min}
-                    description={this.state.description}
-                    isSearchPage={false}
-                />
+                <div className="row">
+                    <div className="col-md-6 col-sm-12">
+                        <Weather
+                            cityname={this.state.city}
+                            country={this.state.country}
+                            weatherIcon={this.state.icon}
+                            temp_celsius={this.state.celsius}
+                            temp_max={this.state.temp_max}
+                            temp_min={this.state.temp_min}
+                            description={this.state.description}
+                            isSearchPage={false}
+                        />
+                    </div>
+                    <div className="col-md-6 col-sm-12">
+                        {this.state.forecastList ? (<ForecastsCarousel
+                            forecastList={this.state.forecastList}
+                            cityname={this.state.city}
+                        />) : null}
+                    </div>
+                </div>
             </div>
         );
     }
