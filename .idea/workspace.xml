@@ -5,13 +5,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/favourites.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/favourites.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/FavouritePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FavouritePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SearchPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Weather.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/favouritesReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/favouritesReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,25 +112,25 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1579534736129" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1580157958986">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="214" key="GridCell.Tab.0.bottom" timestamp="1580200198942">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="723" height="214" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1579537980050" />
+    <state width="1493" height="214" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580200198942" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1580157958986" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1580157958985">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="214" key="GridCell.Tab.0.center" timestamp="1580200198942">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="723" height="214" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1579537980050" />
+    <state width="1493" height="214" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1580200198942" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1580157958985" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1580157958985">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="214" key="GridCell.Tab.0.left" timestamp="1580200198941">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="723" height="214" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1579537980050" />
+    <state width="1493" height="214" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1580200198941" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1580157958985" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1580157958986">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="214" key="GridCell.Tab.0.right" timestamp="1580200198942">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="723" height="214" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1579537980050" />
+    <state width="1493" height="214" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1580200198942" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580157958986" />
     <state x="1061" y="298" key="com.intellij.ide.util.TipDialog" timestamp="1580198435724">
       <screen x="0" y="0" width="1920" height="1040" />

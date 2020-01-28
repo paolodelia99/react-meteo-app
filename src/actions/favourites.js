@@ -3,18 +3,11 @@ import {
     ADD_CITY,
     REMOVE_CITY
 } from "./types";
-import { v4 } from 'node-uuid';
 
-export const addCity = (cityName, country) => dispatch => {
-    const newCityFav = {
-        id: v4(),
-        cityName,
-        country
-    }
-
+export const addCity = (newCity) => dispatch => {
     dispatch({
         type: ADD_CITY,
-        payload: newCityFav
+        payload: newCity
     })
 };
 

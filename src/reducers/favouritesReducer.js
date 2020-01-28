@@ -16,9 +16,10 @@ export default function (state=initialState,action) {
                 loading: false
             };
         case ADD_CITY:
+
             return {
                 ...state,
-                favourites: [payload, ...state.post],
+                favourites: [payload, ...state.favourites],
                 loading: false
             };
         case REMOVE_CITY:

@@ -14,7 +14,7 @@ function NavBar(props) {
                         <NavLink className="nav-link text-light p-3" to='/'>Search</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link text-light p-3" to='/favorites'>Favourites</NavLink>
+                        <NavLink className="nav-link text-light p-3" to='/favourites'>Favourites</NavLink>
                     </li>
                 </ul>
             </div>

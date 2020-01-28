@@ -41,3 +41,17 @@ form input container::-webkit-input-placeholder{
 .favorites-wrapper{
   margin: 20px 0;
 }
+
+/*FAVOURITES PAGE*/
+.fav-cityname-p{
+  float: left;
+}
+
+.delelte-fav-btn{
+  background: transparent;
+}
+
+.delete-fav-icon{
+  color: white;
+  background: transparent;
+}

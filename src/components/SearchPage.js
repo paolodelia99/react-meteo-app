@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Form from "./Form";
 import Weather from "./Weather";
 
-const API_KEY = "429736441cf3572838aa10530929f7cd";
+const API_KEY = "b6c401972b7a8c623e78936ba160fe1d\n";
 
 class SearchPage extends Component {
     constructor() {
@@ -80,9 +80,9 @@ class SearchPage extends Component {
                 city: `${response.name}, ${response.sys.country}`,
                 country: response.sys.country,
                 main: response.weather[0].main,
-                celsius: this.calCelsius(response.main.temp),
-                temp_max: this.calCelsius(response.main.temp_max),
-                temp_min: this.calCelsius(response.main.temp_min),
+                celsius: ""+this.calCelsius(response.main.temp),
+                temp_max: ""+this.calCelsius(response.main.temp_max),
+                temp_min: ""+this.calCelsius(response.main.temp_min),
                 description: response.weather[0].description,
                 error: false
             });
@@ -104,11 +104,13 @@ class SearchPage extends Component {
                 <Form loadWeather={this.getWeather} error={this.state.error} />
                 <Weather
                     cityname={this.state.city}
+                    country={this.state.country}
                     weatherIcon={this.state.icon}
                     temp_celsius={this.state.celsius}
                     temp_max={this.state.temp_max}
                     temp_min={this.state.temp_min}
                     description={this.state.description}
+                    isSearchPage={false}
                 />
             </div>
         );
