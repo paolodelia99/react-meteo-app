@@ -34,6 +34,8 @@ const Weather = ({
     return (
         <div className="container text-light">
             <div className="Card">
+                {cityname ? (<h1 className="text-white text-center">Today</h1>): null}
+                <br/>
                 <h1 className="text-white py-3">{cityname}</h1>
                 <h5 className="py-4">
                     <i className={`wi ${weatherIcon} display-1`} />

@@ -55,3 +55,9 @@ form input container::-webkit-input-placeholder{
   color: white;
   background: transparent;
 }
+
+/* FORECAST CAROUSEL*/
+.slider-container{
+  padding: 5px;
+  width: 85%;
+}

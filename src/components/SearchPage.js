@@ -113,7 +113,7 @@ class SearchPage extends Component {
             <div>
                 <Form loadWeather={this.getWeather} error={this.state.error} />
                 <div className="row">
-                    <div className="col-md-6 col-sm-12">
+                    <div className="col-md-6 col-sm-12 my-5">
                         <Weather
                             cityname={this.state.city}
                             country={this.state.country}
@@ -125,7 +125,7 @@ class SearchPage extends Component {
                             isSearchPage={false}
                         />
                     </div>
-                    <div className="col-md-6 col-sm-12">
+                    <div className="col-md-6 col-sm-12 my-5">
                         {this.state.forecastList ? (<ForecastsCarousel
                             forecastList={this.state.forecastList}
                             cityname={this.state.city}

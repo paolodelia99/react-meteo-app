@@ -2,14 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import ForecastItem from "./ForecastItem";
 import { v4 } from 'node-uuid';
-import HorizontalGallery from 'react-dynamic-carousel'
+import Slider from "react-slick";
 
 const ForecastsCarousel = ({forecastList, cityname}) => {
 
+    let sliderSetting = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    }
+
     let foreCastItemList;
     if(forecastList !== undefined)
-        foreCastItemList = forecastList.map(item => (
-            <div key={v4()}>
+        foreCastItemList = forecastList.map((item,i) => (
+            <div key={i}>
                 <ForecastItem
                     cityname={cityname}
                     weatherId={item.weather[0].id}
@@ -26,13 +34,13 @@ const ForecastsCarousel = ({forecastList, cityname}) => {
     console.log(foreCastItemList)
 
     return forecastList !== undefined && cityname !== undefined ? (
-        <div>
+        <div className="text-center align-content-center">
             <h2 className="text-white py-3">Forecast for the next 6 days</h2>
-            <HorizontalGallery
-                tiles={foreCastItemList}
-                elementWidth={250}
-                minPadding={30}
-            />
+            <div className="slider-container">
+                <Slider {...sliderSetting}>
+                    {foreCastItemList}
+                </Slider>
+            </div>
         </div>
     ): null;
 };
