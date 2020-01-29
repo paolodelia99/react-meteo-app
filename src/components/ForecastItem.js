@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 const ForecastItem = (
     {
+        date,
         cityname,
         weatherId,
         temp_celsius,
@@ -48,6 +49,7 @@ const ForecastItem = (
         <div className="text-white">
             <div className="row">
                 <div className="col">
+                    <h3>{calculateDate(date)}</h3>
                     <h5 className="py-4">
                         <i className={`wi ${weatherIcon} display-1`} />
                     </h5>
@@ -74,6 +76,16 @@ const ForecastItem = (
     );
 };
 
+const calculateDate = (more) =>{
+    let now = new Date();
+    now.setDate(now.getDate()+more);
+
+    let dd = now.getDate();
+    let mm = now.getMonth()+1;
+
+    return (dd)+"/"+(mm);
+}
+
 const calCelsius = (temp)=> {
     let cell = Math.floor(temp - 273.15);
     return cell;
@@ -91,6 +103,7 @@ const minMaxTemp = (min,max) => {
 }
 
 ForecastItem.propTypes = {
+    date: PropTypes.number.isRequired,
     weatherId: PropTypes.number.isRequired,
     cityname: PropTypes.string.isRequired,
     temp_celsius: PropTypes.number.isRequired,

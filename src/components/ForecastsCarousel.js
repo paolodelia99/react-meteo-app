@@ -19,6 +19,7 @@ const ForecastsCarousel = ({forecastList, cityname}) => {
         foreCastItemList = forecastList.map((item,i) => (
             <div key={i}>
                 <ForecastItem
+                    date={i+1}
                     cityname={cityname}
                     weatherId={item.weather[0].id}
                     temp_celsius={item.main.temp}
