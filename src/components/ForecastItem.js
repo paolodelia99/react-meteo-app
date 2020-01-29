@@ -45,27 +45,30 @@ const ForecastItem = (
     },[weatherId]);
 
     return (
-        <div className="row">
-            <div className="col-sm-6">
-                <h1 className="text-white py-3">{cityname}</h1>
-                <h5 className="py-4">
-                    <i className={`wi ${weatherIcon} display-1`} />
-                </h5>
+        <div className="text-white">
+            <div className="row">
+                <div className="col">
+                    <h5 className="py-4">
+                        <i className={`wi ${weatherIcon} display-1`} />
+                    </h5>
+                </div>
             </div>
-            <div className="col-sm-6">
-                {/* Get Celsius */}
-                {temp_celsius ? (
-                    <h1 className="py-2">{calCelsius(temp_celsius)}&deg;</h1>
-                ) : null}
+            <div className="row">
+                    <div className="col p-5">
+                        {/* Get Celsius */}
+                        {temp_celsius ? (
+                            <h2 className="py-2">{calCelsius(temp_celsius)}&deg;</h2>
+                        ) : null}
 
-                {/* show max and min temp */}
-                {minMaxTemp(calCelsius(temp_min), calCelsius(temp_max))}
+                        {/* show max and min temp */}
+                        {minMaxTemp(calCelsius(temp_min), calCelsius(temp_max))}
 
-                {/* Weather description */}
-                <h4 className="py-3">
-                    {description.charAt(0).toUpperCase() +
-                    description.slice(1)}
-                </h4>
+                        {/* Weather description */}
+                        <h4 className="py-3">
+                            {description.charAt(0).toUpperCase() +
+                            description.slice(1)}
+                        </h4>
+                    </div>
             </div>
         </div>
     );

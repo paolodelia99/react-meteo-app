@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import ForecastItem from "./ForecastItem";
 import { v4 } from 'node-uuid';
-import Carousel from "react-responsive-carousel";
+import HorizontalGallery from 'react-dynamic-carousel'
 
 const ForecastsCarousel = ({forecastList, cityname}) => {
 
@@ -28,19 +28,11 @@ const ForecastsCarousel = ({forecastList, cityname}) => {
     return forecastList !== undefined && cityname !== undefined ? (
         <div>
             <h2 className="text-white py-3">Forecast for the next 6 days</h2>
-            <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
-                <div className="carousel-inner">
-                    {foreCastItemList}
-                </div>
-                <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="sr-only">Previous</span>
-                </a>
-                <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span className="sr-only">Next</span>
-                </a>
-            </div>
+            <HorizontalGallery
+                tiles={foreCastItemList}
+                elementWidth={250}
+                minPadding={30}
+            />
         </div>
     ): null;
 };
