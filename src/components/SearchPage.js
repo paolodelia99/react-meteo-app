@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import Form from "./Form";
 import Weather from "./Weather";
 import ForecastsCarousel from "./Forecast/ForecastsCarousel";
+import defaultJSON from '../config/default';
 
-const API_KEY = "b6c401972b7a8c623e78936ba160fe1d\n";
+const API_KEY = defaultJSON.API_KEY;
 
 class SearchPage extends Component {
     constructor() {
@@ -79,40 +80,46 @@ class SearchPage extends Component {
         const city = e.target.elements.city.value;
 
         if (country && city) {
-            const api_call = await fetch(
-                `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}`
-            );
+            try{
+                const api_call = await fetch(
+                    `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}`
+                );
 
-            const api_call_forecast = await fetch(
-                `http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${API_KEY}`
-            );
+                const api_call_forecast = await fetch(
+                    `http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${API_KEY}`
+                );
 
-            const response = await api_call.json();
+                const response = await api_call.json();
 
-            const forecastResponse = await api_call_forecast.json();
+                const forecastResponse = await api_call_forecast.json();
 
-            this.setState({
-                city: `${response.name}, ${response.sys.country}`,
-                country: response.sys.country,
-                main: response.weather[0].main,
-                celsius: ""+this.calCelsius(response.main.temp),
-                temp_max: ""+this.calCelsius(response.main.temp_max),
-                temp_min: ""+this.calCelsius(response.main.temp_min),
-                description: response.weather[0].description,
-                pressure: response.main.pressure,
-                humidity: response.main.humidity,
-                windSpeed: response.wind.speed,
-                windDegree: response.wind.deg,
-                sunrise: response.sys.sunrise,
-                sunset: response.sys.sunset,
-                error: false,
-                forecastList: forecastResponse.list.slice(0,6)
-            });
+                this.setState({
+                    city: `${response.name}, ${response.sys.country}`,
+                    country: response.sys.country,
+                    main: response.weather[0].main,
+                    celsius: ""+this.calCelsius(response.main.temp),
+                    temp_max: ""+this.calCelsius(response.main.temp_max),
+                    temp_min: ""+this.calCelsius(response.main.temp_min),
+                    description: response.weather[0].description,
+                    pressure: response.main.pressure,
+                    humidity: response.main.humidity,
+                    windSpeed: response.wind.speed,
+                    windDegree: response.wind.deg,
+                    sunrise: response.sys.sunrise,
+                    sunset: response.sys.sunset,
+                    error: false,
+                    forecastList: forecastResponse.list.slice(0,6)
+                });
 
-            // seting icons
-            this.get_WeatherIcon(this.weatherIcon, response.weather[0].id);
+                // seting icons
+                this.get_WeatherIcon(this.weatherIcon, response.weather[0].id);
 
-            console.log(response);
+                console.log(response);
+            }catch (err) {
+                this.setState({
+                    error: true
+                })
+            }
         } else {
             this.setState({
                 error: true

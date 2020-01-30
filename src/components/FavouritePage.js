@@ -4,6 +4,9 @@ import {removeCity} from '../actions/favourites'
 import PropTypes from 'prop-types'
 import Weather from "./Weather";
 import Octicon, {X} from "@primer/octicons-react";
+import defaultJSON from '../config/default';
+
+const API_KEY = defaultJSON.API_KEY;
 
 /*fixme:
 *  rendilo uno stateless component */
@@ -15,20 +18,97 @@ class FavouritePage extends Component {
         currentTemp_celsius: '',
         currentTemp_max: '',
         currentTemp_min: '',
-        currentDescription: ''
+        currentDescription: '',
+        currentPressure: null,
+        currentHumidity: null,
+        currentWindSpeed: null,
+        currentWindDegree: null,
+        currentSunriseTime: null,
+        currentSunsetTime: null,
+        error: false
     };
 
-    setCurrentCity = (fav) =>{
-        this.setState({
-            currentCity: fav.cityName,
-            currentCountry: fav.country,
-            currentWeatherIcon: fav.weatherIcon,
-            currentTemp_celsius: fav.temp_celsius,
-            currentTemp_max: fav.temp_max,
-            currentTemp_min: fav.temp_min,
-            currentDescription: fav.description
-        })
+    //fixme: make a component that return the icon
+    weatherIcon = {
+        Thunderstorm: "wi-thunderstorm",
+        Drizzle: "wi-sleet",
+        Rain: "wi-storm-showers",
+        Snow: "wi-snow",
+        Atmosphere: "wi-fog",
+        Clear: "wi-day-sunny",
+        Clouds: "wi-day-fog"
     };
+
+    get_WeatherIcon(icons, rangeId){
+        switch (true) {
+            case rangeId >= 200 && rangeId < 232:
+                this.setState({ currentWeatherIcon: icons.Thunderstorm });
+                break;
+            case rangeId >= 300 && rangeId <= 321:
+                this.setState({ currentWeatherIcon: icons.Drizzle });
+                break;
+            case rangeId >= 500 && rangeId <= 521:
+                this.setState({ currentWeatherIcon: icons.Rain });
+                break;
+            case rangeId >= 600 && rangeId <= 622:
+                this.setState({ currentWeatherIcon: icons.Snow });
+                break;
+            case rangeId >= 701 && rangeId <= 781:
+                this.setState({ currentWeatherIcon: icons.Atmosphere });
+                break;
+            case rangeId === 800:
+                this.setState({ currentWeatherIcon: icons.Clear });
+                break;
+            case rangeId >= 801 && rangeId <= 804:
+                this.setState({ currentWeatherIcon: icons.Clouds });
+                break;
+            default:
+                this.setState({ currentWeatherIcon: icons.Clouds });
+        }
+    }
+
+    setCurrentCity = async (fav) =>{
+
+        if (fav.country && fav.cityName) {
+            const city = (fav.cityName.split(","))[0];
+            const api_call = await fetch(
+                `http://api.openweathermap.org/data/2.5/weather?q=${city},${fav.country}&appid=${API_KEY}`
+            );
+
+            const response = await api_call.json();
+            console.log(response)
+
+            this.setState({
+                currentCity: fav.cityName,
+                currentCountry: fav.country,
+                currentWeatherIcon: fav.weatherIcon,
+                currentTemp_celsius: ""+this.calCelsius(response.main.temp),
+                currentTemp_max: ""+this.calCelsius(response.main.temp_max),
+                currentTemp_min: ""+this.calCelsius(response.main.temp_min),
+                currentDescription: response.weather[0].description,
+                currentPressure: response.main.pressure,
+                currentHumidity: response.main.humidity,
+                currentWindSpeed: response.wind.speed,
+                currentWindDegree: response.wind.deg,
+                currentSunriseTime: response.sys.sunrise,
+                currentSunsetTime: response.sys.sunset,
+                error: false
+            })
+
+            this.get_WeatherIcon(this.weatherIcon, response.weather[0].id);
+
+        }else{
+            this.setState({
+                error: true
+            })
+        }
+
+    };
+
+    calCelsius = (temp) =>{
+        let cell = Math.floor(temp - 273.15);
+        return cell;
+    }
 
     removeFav = (id,cityName) =>{
         if(cityName === this.state.currentCity)
@@ -75,6 +155,11 @@ class FavouritePage extends Component {
                     </div>
                 </div>
                 <div className="col-md-6 col-sm-12">
+                    {this.state.error ? (
+                        <div className="alert alert-danger" role="alert">
+                            Error
+                        </div>
+                    ): null}
                     <Weather
                         isSearchPage={true}
                         cityname={this.state.currentCity}
@@ -83,6 +168,12 @@ class FavouritePage extends Component {
                         temp_max={this.state.currentTemp_max}
                         temp_min={this.state.currentTemp_min}
                         description={this.state.currentDescription}
+                        pressure={this.state.currentPressure}
+                        humidity={this.state.currentHumidity}
+                        windSpeed={this.state.currentWindSpeed}
+                        windDegree={this.state.currentWindDegree}
+                        sunrise={this.state.currentSunriseTime}
+                        sunset={this.state.currentSunsetTime}
                     />
                 </div>
             </div>

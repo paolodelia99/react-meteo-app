@@ -33,18 +33,7 @@ const Weather = ({
          const newCity = {
                 id: v4(),
                 cityName:cityname,
-                country: country,
-                weatherIcon: weatherIcon,
-                temp_celsius: temp_celsius,
-                temp_max: temp_max,
-                temp_min: temp_min,
-                description: description,
-                pressure,
-                humidity,
-                windSpeed,
-                windDegree,
-                sunrise,
-                sunset,
+                country: country
          };
 
          addCity(newCity);
