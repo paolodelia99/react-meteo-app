@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, useState} from 'react';
 import { connect } from 'react-redux';
 import {addCity} from "../actions/favourites";
 import PropTypes from 'prop-types'
@@ -21,7 +21,14 @@ const Weather = ({
                      sunrise,
                      sunset,
 }) => {
+    const [showDetails,setShowDetails] = useState(false);
 
+    const toggleDetails = ()=>{
+        setShowDetails(!showDetails)
+    };
+
+    /*fixme: errorone nel local storage salvo  il meteo del determinato giorno che l'ho aggiunto ai preferiti
+    *  devo salvare solo il nome della città e la nazione, e allo scatenarsi dell'evente devo fare la request*/
     const addNewFavourites = ()=>{
          const newCity = {
                 id: v4(),
@@ -31,7 +38,13 @@ const Weather = ({
                 temp_celsius: temp_celsius,
                 temp_max: temp_max,
                 temp_min: temp_min,
-                description: description
+                description: description,
+                pressure,
+                humidity,
+                windSpeed,
+                windDegree,
+                sunrise,
+                sunset,
          };
 
          addCity(newCity);
@@ -61,27 +74,33 @@ const Weather = ({
                     description.slice(1)}
                 </h4>
                 <br/>
-                {(!isSearchPage && cityname) ? (
+                {(cityname) ? (
                     <div className="details-container">
                         <p>
-                            <button className="btn btn-primary" type="button" data-toggle="collapse"
+                            <button className="btn bg-transparent text-white" type="button" onClick={toggleDetails} data-toggle="collapse"
                                     data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                Details
+                                {!showDetails ? "Details" : "Hide details"}
                             </button>
                         </p>
                         <div className="collapse" id="collapseExample">
                              <div >
-                                 <h4 className="my-1">pressure: {pressure}</h4>
-                                 <h4 className="my-1">humidity: {humidity}</h4>
-                                 <h4 className="my-1">wind speed: {windSpeed}</h4>
-                                 <h4 className="my-1">wind deg: {windDegree}</h4>
-                                 <h4 className="my-1">sunrise: {getSunHour(sunrise)}</h4>
-                                 <h4 className="my-1">sunset: {getSunHour(sunset)}</h4>
+                                 <h5 className="my-2">pressure: {pressure} hPa</h5>
+                                 <h5 className="my-2">humidity: {humidity} %</h5>
+                                 <h5 className="my-2">wind speed: {windSpeed} meter/sec</h5>
+                                 <h5 className="my-2">wind deg: {windDegree}°</h5>
+                                 <div className="row">
+                                     <div className="col-md-6 col-sm-12 pl-2">
+                                         <h5 className="my-2">sunrise time: {getSunHour(sunrise)}</h5>
+                                     </div>
+                                     <div className="col-md-6 col-sm-12 pl-2">
+                                         <h5 className="my-2">sunset time: {getSunHour(sunset)}</h5>
+                                     </div>
+                                 </div>
                              </div>
                         </div>
                     </div>
                 ) : null}
-                {(!isSearchPage && cityname) ? (<button className="btn btn-warning" onClick={addNewFavourites}>Add to Favourites</button>):null}
+                {(!isSearchPage && cityname) ? (<button className="btn btn-warning my-3" onClick={addNewFavourites}>Add to Favourites</button>):null}
             </div>
         </div>
     );
