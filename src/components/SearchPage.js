@@ -16,6 +16,12 @@ class SearchPage extends Component {
             celsius: undefined,
             temp_max: null,
             temp_min: null,
+            pressure: null,
+            humidity: null,
+            windSpeed: null,
+            windDegree: null,
+            sunrise: null,
+            sunset: null,
             description: "",
             error: false,
             forecastList: undefined,
@@ -93,6 +99,12 @@ class SearchPage extends Component {
                 temp_max: ""+this.calCelsius(response.main.temp_max),
                 temp_min: ""+this.calCelsius(response.main.temp_min),
                 description: response.weather[0].description,
+                pressure: response.main.pressure,
+                humidity: response.main.humidity,
+                windSpeed: response.wind.speed,
+                windDegree: response.wind.deg,
+                sunrise: response.sys.sunrise,
+                sunset: response.sys.sunset,
                 error: false,
                 forecastList: forecastResponse.list.slice(0,6)
             });
@@ -122,6 +134,12 @@ class SearchPage extends Component {
                             temp_max={this.state.temp_max}
                             temp_min={this.state.temp_min}
                             description={this.state.description}
+                            pressure={this.state.pressure}
+                            humidity={this.state.humidity}
+                            windSpeed={this.state.windSpeed}
+                            windDegree={this.state.windDegree}
+                            sunrise={this.state.sunrise}
+                            sunset={this.state.sunset}
                             isSearchPage={false}
                         />
                     </div>

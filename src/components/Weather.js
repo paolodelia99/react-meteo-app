@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import { connect } from 'react-redux';
 import {addCity} from "../actions/favourites";
 import PropTypes from 'prop-types'
@@ -55,6 +55,23 @@ const Weather = ({
                     description.slice(1)}
                 </h4>
                 <br/>
+                {(!isSearchPage && cityname) ? (
+                    <div className="details-container">
+                        <p>
+                            <button className="btn btn-primary" type="button" data-toggle="collapse"
+                                    data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                Details
+                            </button>
+                        </p>
+                        <div className="collapse" id="collapseExample">
+                             <div >
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                    richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                                    cred nesciunt sapiente ea proident.
+                             </div>
+                        </div>
+                    </div>
+                ) : null}
                 {(!isSearchPage && cityname) ? (<button className="btn btn-warning" onClick={addNewFavourites}>Add to Favourites</button>):null}
             </div>
         </div>
@@ -72,6 +89,10 @@ function minMaxTemp(min,max) {
     }
 }
 
+function returnSunHour(){
+
+}
+
 Weather.propTypes = {
     addCity: PropTypes.func,
     cityname: PropTypes.string,
@@ -81,7 +102,13 @@ Weather.propTypes = {
     temp_max: PropTypes.string,
     temp_min: PropTypes.string,
     description: PropTypes.string,
-    isSearchPage:PropTypes.bool.isRequired
+    isSearchPage:PropTypes.bool.isRequired,
+    pressure: PropTypes.number,
+    humidity: PropTypes.number,
+    windSpeed: PropTypes.number,
+    windDegree: PropTypes.number,
+    sunrise: PropTypes.number,
+    sunset: PropTypes.number,
 };
 
 export default connect(null,{addCity})(Weather);

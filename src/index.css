@@ -49,6 +49,11 @@ form input container::-webkit-input-placeholder{
   margin: 2px;
 }
 
+.details-container{
+  background: none;
+  color: white;
+}
+
 /*favorites side bar*/
 
 .favorites-wrapper{
