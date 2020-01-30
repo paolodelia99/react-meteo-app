@@ -35,7 +35,7 @@ const ForecastsCarousel = ({forecastList, cityname}) => {
     console.log(foreCastItemList)
 
     return forecastList !== undefined && cityname !== undefined ? (
-        <div className="text-center align-content-center">
+        <div className="text-center align-content-center forecast-big-wrapper">
             <h2 className="text-white py-3">Forecast for the next 6 days</h2>
             <div className="slider-container">
                 <Slider {...sliderSetting}>

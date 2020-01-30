@@ -1,4 +1,4 @@
-import {ADD_CITY, GET_CITIES, REMOVE_CITY} from "../actions/types";
+import {ADD_CITY, REMOVE_CITY} from "../actions/types";
 
 const initialState = {
     favourites: [],
@@ -9,12 +9,6 @@ export default function (state=initialState,action) {
     const { type, payload } = action;
 
     switch (type) {
-        case GET_CITIES:
-            return{
-                ...state,
-                favourites: payload,
-                loading: false
-            };
         case ADD_CITY:
 
             return {

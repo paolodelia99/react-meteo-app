@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Form from "./Form";
 import Weather from "./Weather";
-import ForecastsCarousel from "./ForecastsCarousel";
+import ForecastsCarousel from "./Forecast/ForecastsCarousel";
 
 const API_KEY = "b6c401972b7a8c623e78936ba160fe1d\n";
 

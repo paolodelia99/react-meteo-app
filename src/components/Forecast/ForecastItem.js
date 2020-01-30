@@ -83,7 +83,10 @@ const calculateDate = (more) =>{
     let dd = now.getDate();
     let mm = now.getMonth()+1;
 
-    return (dd)+"/"+(mm);
+    if(mm<10)
+        mm = "0"+mm;
+
+    return dd+"/"+mm;
 }
 
 const calCelsius = (temp)=> {

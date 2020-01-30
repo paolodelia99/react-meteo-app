@@ -8,13 +8,13 @@ function NavBar(props) {
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav justify-content-center">
+            <div className="navbar-collapse collapse justify-content-center order-2" id="navbarNav">
+                <ul className="navbar-nav justify-content-center pull-sm-left">
                     <li className="nav-item">
-                        <NavLink className="nav-link text-light p-3" to='/'>Search</NavLink>
+                        <NavLink className="nav-link text-light p-3" to='/'><b>Search</b></NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link text-light p-3" to='/favourites'>Favourites</NavLink>
+                        <NavLink className="nav-link text-light p-3" to='/favourites'><b>Favourites</b></NavLink>
                     </li>
                 </ul>
             </div>

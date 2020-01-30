@@ -1,5 +1,4 @@
 import {
-    GET_CITIES,
     ADD_CITY,
     REMOVE_CITY
 } from "./types";
