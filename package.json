@@ -2,6 +2,10 @@
   "name": "react-meteo-web-app",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm":"6.12.1",
+    "node": "12.13.1"
+  },
   "dependencies": {
     "@primer/octicons-react": "^9.3.1",
     "@testing-library/jest-dom": "^4.2.4",
@@ -23,13 +27,13 @@
     "redux-thunk": "^2.3.0",
     "weather-icons": "git+https://github.com/erikflowers/weather-icons.git"
   },
-  "homepage": "https://paolodelia.github.io/reactWeatherApp",
+  "homepage": "https://paolodelia99.github.io/react-meteo-app",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && gh-pages -d build"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -45,5 +49,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
   }
 }
