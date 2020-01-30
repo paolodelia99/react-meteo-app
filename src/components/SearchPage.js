@@ -79,7 +79,7 @@ class SearchPage extends Component {
 
             const api_call_forecast = await fetch(
                 `http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${API_KEY}`
-            )
+            );
 
             const response = await api_call.json();
 

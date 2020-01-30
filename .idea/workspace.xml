@@ -3,15 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7cace663-2a32-434d-87d0-ad6448a882a1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/favourites.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/favourites.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/types.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ForecastItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forecast/ForecastItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ForecastsCarousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forecast/ForecastsCarousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Forecast/ForecastItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forecast/ForecastItem.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SearchPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/favouritesReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/favouritesReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
