@@ -13,7 +13,13 @@ const Weather = ({
                      temp_max,
                      temp_min,
                      description,
-                     isSearchPage
+                     isSearchPage,
+                     pressure,
+                     humidity,
+                     windSpeed,
+                     windDegree,
+                     sunrise,
+                     sunset,
 }) => {
 
     const addNewFavourites = ()=>{
@@ -65,9 +71,12 @@ const Weather = ({
                         </p>
                         <div className="collapse" id="collapseExample">
                              <div >
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                    richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
-                                    cred nesciunt sapiente ea proident.
+                                 <h4 className="my-1">pressure: {pressure}</h4>
+                                 <h4 className="my-1">humidity: {humidity}</h4>
+                                 <h4 className="my-1">wind speed: {windSpeed}</h4>
+                                 <h4 className="my-1">wind deg: {windDegree}</h4>
+                                 <h4 className="my-1">sunrise: {getSunHour(sunrise)}</h4>
+                                 <h4 className="my-1">sunset: {getSunHour(sunset)}</h4>
                              </div>
                         </div>
                     </div>
@@ -89,8 +98,18 @@ function minMaxTemp(min,max) {
     }
 }
 
-function returnSunHour(){
+function getSunHour(unix_timestamp){
+    let date = new Date(unix_timestamp * 1000);
 
+    let hours = date.getHours();
+
+    let minutes = "0" + date.getMinutes();
+
+    let seconds = "0" + date.getSeconds();
+
+    let formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+
+    return formattedTime;
 }
 
 Weather.propTypes = {
