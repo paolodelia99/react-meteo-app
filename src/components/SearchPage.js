@@ -131,30 +131,32 @@ class SearchPage extends Component {
         return (
             <div>
                 <Form loadWeather={this.getWeather} error={this.state.error} />
-                <div className="row">
-                    <div className="col-md-6 col-sm-12 my-5">
-                        <Weather
-                            cityname={this.state.city}
-                            country={this.state.country}
-                            weatherIcon={this.state.icon}
-                            temp_celsius={this.state.celsius}
-                            temp_max={this.state.temp_max}
-                            temp_min={this.state.temp_min}
-                            description={this.state.description}
-                            pressure={this.state.pressure}
-                            humidity={this.state.humidity}
-                            windSpeed={this.state.windSpeed}
-                            windDegree={this.state.windDegree}
-                            sunrise={this.state.sunrise}
-                            sunset={this.state.sunset}
-                            isSearchPage={false}
-                        />
-                    </div>
-                    <div className="col-md-6 col-sm-12 my-5">
-                        {this.state.forecastList ? (<ForecastsCarousel
-                            forecastList={this.state.forecastList}
-                            cityname={this.state.city}
-                        />) : null}
+                <div className="container-fluid">
+                    <div className="row">
+                        <div className="col-md-6 col-sm-12 my-5">
+                            <Weather
+                                cityname={this.state.city}
+                                country={this.state.country}
+                                weatherIcon={this.state.icon}
+                                temp_celsius={this.state.celsius}
+                                temp_max={this.state.temp_max}
+                                temp_min={this.state.temp_min}
+                                description={this.state.description}
+                                pressure={this.state.pressure}
+                                humidity={this.state.humidity}
+                                windSpeed={this.state.windSpeed}
+                                windDegree={this.state.windDegree}
+                                sunrise={this.state.sunrise}
+                                sunset={this.state.sunset}
+                                isSearchPage={false}
+                            />
+                        </div>
+                        <div className="col-md-6 col-sm-12 my-5">
+                            {this.state.forecastList ? (<ForecastsCarousel
+                                forecastList={this.state.forecastList}
+                                cityname={this.state.city}
+                            />) : null}
+                        </div>
                     </div>
                 </div>
             </div>
