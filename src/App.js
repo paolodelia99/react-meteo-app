@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {HashRouter as Router, Switch, Route} from 'react-router-dom'
+import {HashRouter , Switch, Route} from 'react-router-dom'
 import './App.css';
 import "weather-icons/css/weather-icons.css";
 import 'bootstrap/dist/css/bootstrap-grid.min.css';
@@ -14,15 +14,17 @@ class App extends Component {
     render() {
         return (
             <Provider store={store}>
-                <Router>
+                <HashRouter>
                     <div className="App">
                         <NavBar/>
                         <Switch>
-                            <Route exact path='/' component={SearchPage}/>
-                            <Route exact path='/favourites' component={FavouritePage}/>
+                            <Switch>
+                                <Route exact path='/' component={SearchPage}/>
+                                <Route exact path='/favourites' component={FavouritePage}/>
+                            </Switch>
                         </Switch>
                     </div>
-                </Router>
+                </HashRouter>
             </Provider>
         );
     }

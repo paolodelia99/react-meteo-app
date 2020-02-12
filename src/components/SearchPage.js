@@ -81,12 +81,28 @@ class SearchPage extends Component {
 
         if (country && city) {
             try{
+                let url;
+
+                // eslint-disable-next-line no-restricted-globals
+                if(location.protocol === 'http:')
+                    url = `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}`;
+                else
+                    url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}`;
+
                 const api_call = await fetch(
-                    `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}`
+                    `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}`
                 );
 
+                let urlForecast;
+
+                // eslint-disable-next-line no-restricted-globals
+                if(location.protocol === 'http:')
+                    urlForecast = `http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${API_KEY}`
+                else
+                    urlForecast = `https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${API_KEY}`
+
                 const api_call_forecast = await fetch(
-                    `http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${API_KEY}`
+                    urlForecast
                 );
 
                 const response = await api_call.json();
