@@ -71,8 +71,16 @@ class FavouritePage extends Component {
 
         if (fav.country && fav.cityName) {
             const city = (fav.cityName.split(","))[0];
+            let url;
+
+            // eslint-disable-next-line no-restricted-globals
+            if(location.protocol === 'http:')
+                url = `http://api.openweathermap.org/data/2.5/weather?q=${city},${fav.country}&appid=${API_KEY}`;
+            else
+                url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${fav.country}&appid=${API_KEY}`;
+
             const api_call = await fetch(
-                `http://api.openweathermap.org/data/2.5/weather?q=${city},${fav.country}&appid=${API_KEY}`
+                url
             );
 
             const response = await api_call.json();
