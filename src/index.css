@@ -88,7 +88,7 @@ form input container::-webkit-input-placeholder{
 
 @media screen and (min-width: 240px) and (max-width: 375px) {
   .app-logo{
-    font-size: 20px;
+    font-size: 25px;
   }
 }
 
