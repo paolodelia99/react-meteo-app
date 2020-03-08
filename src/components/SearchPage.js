@@ -3,6 +3,8 @@ import Form from "./Form";
 import Weather from "./Weather";
 import ForecastsCarousel from "./Forecast/ForecastsCarousel";
 import defaultJSON from '../config/default';
+import defaultRes from '../resources/defaultRes';
+import _ from 'lodash'
 
 const API_KEY = defaultJSON.API_KEY;
 
@@ -90,7 +92,7 @@ class SearchPage extends Component {
                     url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}`;
 
                 const api_call = await fetch(
-                    `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}`
+                    url
                 );
 
                 let urlForecast;
@@ -110,27 +112,27 @@ class SearchPage extends Component {
                 const forecastResponse = await api_call_forecast.json();
 
                 this.setState({
-                    city: `${response.name}, ${response.sys.country}`,
-                    country: response.sys.country,
-                    main: response.weather[0].main,
-                    celsius: ""+this.calCelsius(response.main.temp),
-                    temp_max: ""+this.calCelsius(response.main.temp_max),
-                    temp_min: ""+this.calCelsius(response.main.temp_min),
-                    description: response.weather[0].description,
-                    pressure: response.main.pressure,
-                    humidity: response.main.humidity,
-                    windSpeed: response.wind.speed,
-                    windDegree: response.wind.deg,
-                    sunrise: response.sys.sunrise,
-                    sunset: response.sys.sunset,
+                    city: `${_.get(response,'name','No name found')}, ${_.get(response,'sys.country','No Country Found')}`,
+                    country: _.get(response,'sys.country','No country found'),
+                    main: _.get(response,'weather[0].main',null),
+                    celsius: ""+this.calCelsius(_.get(response,'main.temp',null)),
+                    temp_max: ""+this.calCelsius(_.get(response,'main.temp_max',null)),
+                    temp_min: ""+this.calCelsius(_.get(response,'main.temp_min',null)),
+                    description: _.get(response,'weather[0].description','No descritpion'),
+                    pressure: _.get(response,'main.pressure',null),
+                    humidity: _.get(response,'main.humidity',null),
+                    windSpeed: _.get(response,'wind.speed',null),
+                    windDegree: _.get(response,'wind.deg',null),
+                    sunrise: _.get(response,'sys.sunrise',null),
+                    sunset: _.get(response,'sys.sunset',null),
                     error: false,
                     forecastList: forecastResponse.list.slice(0,6)
                 });
 
                 // seting icons
-                this.get_WeatherIcon(this.weatherIcon, response.weather[0].id);
+                this.get_WeatherIcon(this.weatherIcon, _.get(response,'weather[0].id',null));
 
-                console.log(response);
+                //console.log(response);
             }catch (err) {
                 this.setState({
                     error: true

@@ -66,7 +66,7 @@ const Weather = ({
                 {(cityname) ? (
                     <div className="details-container">
                         <p>
-                            <button className="btn bg-transparent text-white" type="button" onClick={toggleDetails} data-toggle="collapse"
+                            <button className="btn bg-transparent text-white border-white rounded" type="button" onClick={toggleDetails} data-toggle="collapse"
                                     data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                 {!showDetails ? "Details" : "Hide details"}
                             </button>

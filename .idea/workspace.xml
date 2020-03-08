@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cace663-2a32-434d-87d0-ad6448a882a1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/resources/defaultRes.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SearchPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Weather.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +57,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\pc\IdeaProjects\react-meteo-app\src\resources" />
       <recent name="C:\Users\pc\IdeaProjects\react-meteo-app\src\components\Favourites" />
       <recent name="C:\Users\pc\IdeaProjects\react-meteo-app\src\components" />
     </key>
@@ -113,7 +118,9 @@
       <workItem from="1580460521548" duration="1366000" />
       <workItem from="1580462751685" duration="80000" />
       <workItem from="1581330314217" duration="278000" />
-      <workItem from="1581496659577" duration="3350000" />
+      <workItem from="1581496659577" duration="3688000" />
+      <workItem from="1582530966398" duration="2349000" />
+      <workItem from="1583681793442" duration="2862000" />
     </task>
     <servers />
   </component>
@@ -121,6 +128,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="738" y="311" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583683227785">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="738" y="311" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1583683227785" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1579534736129">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
