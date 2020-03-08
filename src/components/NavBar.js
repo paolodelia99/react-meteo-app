@@ -10,7 +10,7 @@ function NavBar(props) {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <Link className="navbar-brand ml-3" to="/">
-                    <h5 className="py-4 text-white">
+                    <h5 className="py-4 text-white app-logo">
                         React Weather App
                     </h5>
                 </Link>
