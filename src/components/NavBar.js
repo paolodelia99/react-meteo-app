@@ -11,7 +11,7 @@ function NavBar(props) {
                 </button>
                 <Link className="navbar-brand ml-3" to="/">
                     <h5 className="py-4 text-white app-logo">
-                        React Weather App
+                        Simply weather
                     </h5>
                 </Link>
             </div>

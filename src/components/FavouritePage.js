@@ -79,9 +79,7 @@ class FavouritePage extends Component {
             else
                 url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${fav.country}&appid=${API_KEY}`;
 
-            const api_call = await fetch(
-                url
-            );
+            const api_call = await fetch(url);
 
             const response = await api_call.json();
             console.log(response)

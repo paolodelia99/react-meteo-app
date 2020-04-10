@@ -12,6 +12,7 @@
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.4.1",
+    "loadash": "^1.0.0",
     "lodash.throttle": "^4.1.1",
     "node-uuid": "^1.4.8",
     "prop-types": "^15.7.2",
@@ -25,7 +26,8 @@
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
-    "weather-icons": "git+https://github.com/erikflowers/weather-icons.git"
+    "weather-icons": "git+https://github.com/erikflowers/weather-icons.git",
+    "lodash": "latest"
   },
   "homepage": "https://paolodelia99.github.io/react-meteo-app",
   "scripts": {
