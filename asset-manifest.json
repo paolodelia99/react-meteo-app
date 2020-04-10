@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/react-meteo-app/static/css/main.44739df9.chunk.css",
-    "main.js": "/react-meteo-app/static/js/main.03809fbd.chunk.js",
-    "main.js.map": "/react-meteo-app/static/js/main.03809fbd.chunk.js.map",
+    "main.css": "/react-meteo-app/static/css/main.e13aba0a.chunk.css",
+    "main.js": "/react-meteo-app/static/js/main.c71f7a39.chunk.js",
+    "main.js.map": "/react-meteo-app/static/js/main.c71f7a39.chunk.js.map",
     "runtime-main.js": "/react-meteo-app/static/js/runtime-main.6469b11d.js",
     "runtime-main.js.map": "/react-meteo-app/static/js/runtime-main.6469b11d.js.map",
     "static/css/2.6b68094d.chunk.css": "/react-meteo-app/static/css/2.6b68094d.chunk.css",
-    "static/js/2.3e5508fe.chunk.js": "/react-meteo-app/static/js/2.3e5508fe.chunk.js",
-    "static/js/2.3e5508fe.chunk.js.map": "/react-meteo-app/static/js/2.3e5508fe.chunk.js.map",
+    "static/js/2.374a20bd.chunk.js": "/react-meteo-app/static/js/2.374a20bd.chunk.js",
+    "static/js/2.374a20bd.chunk.js.map": "/react-meteo-app/static/js/2.374a20bd.chunk.js.map",
     "index.html": "/react-meteo-app/index.html",
-    "precache-manifest.f5652a162504c976bd7d23803eab022f.js": "/react-meteo-app/precache-manifest.f5652a162504c976bd7d23803eab022f.js",
+    "precache-manifest.386a480203ebc981316b56efa873e5a0.js": "/react-meteo-app/precache-manifest.386a480203ebc981316b56efa873e5a0.js",
     "service-worker.js": "/react-meteo-app/service-worker.js",
     "static/css/2.6b68094d.chunk.css.map": "/react-meteo-app/static/css/2.6b68094d.chunk.css.map",
-    "static/css/main.44739df9.chunk.css.map": "/react-meteo-app/static/css/main.44739df9.chunk.css.map",
-    "static/js/2.3e5508fe.chunk.js.LICENSE": "/react-meteo-app/static/js/2.3e5508fe.chunk.js.LICENSE",
+    "static/css/main.e13aba0a.chunk.css.map": "/react-meteo-app/static/css/main.e13aba0a.chunk.css.map",
+    "static/js/2.374a20bd.chunk.js.LICENSE": "/react-meteo-app/static/js/2.374a20bd.chunk.js.LICENSE",
     "static/media/index.css": "/react-meteo-app/static/media/blur-background-1187974.55d5567d.jpg",
     "static/media/weather-icons.css": "/react-meteo-app/static/media/weathericons-regular-webfont.ed0943f2.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.6469b11d.js",
     "static/css/2.6b68094d.chunk.css",
-    "static/js/2.3e5508fe.chunk.js",
-    "static/css/main.44739df9.chunk.css",
-    "static/js/main.03809fbd.chunk.js"
+    "static/js/2.374a20bd.chunk.js",
+    "static/css/main.e13aba0a.chunk.css",
+    "static/js/main.c71f7a39.chunk.js"
   ]
 }
